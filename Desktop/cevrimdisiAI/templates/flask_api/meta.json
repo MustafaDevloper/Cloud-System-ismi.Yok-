@@ -1,0 +1,6 @@
+{
+  "name": "flask_api",
+  "description": "Flask REST API şablonu - CORS, error handling, logging",
+  "files": ["app.py", "requirements.txt"],
+  "placeholders": ["app_name", "port"]
+}

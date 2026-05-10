@@ -1,0 +1,29 @@
+# ARIA — Python bağımlılıkları
+# Tümü opsiyoneldir; çekirdek sistem standart kütüphane ile çalışır.
+
+# ── Zorunlu (Python stdlib — ek kurulum gerekmez) ─────────────
+# json, os, sys, re, subprocess, pathlib, logging, datetime,
+# signal, readline, importlib, ast, operator, shlex, platform
+
+# ── İsteğe Bağlı Geliştirmeler ───────────────────────────────
+
+# Renkli terminal (Windows uyumluluğu için önerilir)
+colorama>=0.4.6
+
+# Daha iyi readline desteği (Windows)
+pyreadline3>=3.4.1; sys_platform == "win32"
+
+# Metin benzerliği (fuzzy matching, gelecek sürüm)
+# rapidfuzz>=3.0.0
+
+# Ses sentezi (isteğe bağlı sesli yanıt)
+# pyttsx3>=2.90
+
+# HTTP istekleri (plugin'ler için)
+# requests>=2.31.0
+
+# Flask (create_flask şablonu çalıştırmak için)
+# flask>=3.0.0
+
+# Discord bot şablonu için
+# discord.py>=2.3.0

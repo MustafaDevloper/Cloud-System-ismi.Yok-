@@ -1,0 +1,199 @@
+{
+  "version": "1.0.0",
+  "agent_name": "ARIA",
+  "agent_fullname": "Autonomous Rule-based Intelligence Agent",
+  "language": "tr",
+  "max_history": 100,
+  "workspace_dir": "workspace",
+  "log_level": "INFO",
+  "auto_save_memory": true,
+  "command_timeout": 30,
+  "allowed_terminal_commands": [
+    "dir", "ls", "echo", "python", "python3", "ping",
+    "ipconfig", "ifconfig", "whoami", "date", "time",
+    "type", "cat", "pwd", "cd", "mkdir", "tree",
+    "pip", "pip3", "cls", "clear"
+  ],
+  "aliases": {
+    "html yap": "html oluştur",
+    "html kur": "html oluştur",
+    "py yap": "python kodu oluştur",
+    "dosya yap": "dosya oluştur",
+    "sil": "dosya sil",
+    "çalıştır": "terminal çalıştır",
+    "komut": "terminal çalıştır",
+    "hatırla": "belleği kaydet",
+    "unutma": "belleği kaydet",
+    "geçmiş": "geçmişi göster",
+    "temizle": "ekranı temizle",
+    "yardım": "yardım göster",
+    "help": "yardım göster",
+    "hi": "merhaba",
+    "hey": "merhaba"
+  },
+  "commands": [
+    {
+      "id": "greeting",
+      "keywords": ["merhaba", "selam", "hey", "hi", "hello", "günaydın", "iyi günler", "iyi akşamlar"],
+      "action": "respond",
+      "response_key": "greeting",
+      "priority": 1
+    },
+    {
+      "id": "farewell",
+      "keywords": ["güle güle", "hoşça kal", "bye", "exit", "çıkış", "quit", "görüşürüz"],
+      "action": "exit_agent",
+      "response_key": "farewell",
+      "priority": 1
+    },
+    {
+      "id": "help",
+      "keywords": ["yardım", "yardım göster", "help", "ne yapabilirsin", "komutlar", "özellikler"],
+      "action": "show_help",
+      "priority": 2
+    },
+    {
+      "id": "clear_screen",
+      "keywords": ["ekranı temizle", "temizle", "clear", "cls"],
+      "action": "clear_screen",
+      "priority": 2
+    },
+    {
+      "id": "create_html",
+      "keywords": ["html oluştur", "html yap", "html dosya", "web sayfası yap", "html template"],
+      "action": "create_html",
+      "priority": 3
+    },
+    {
+      "id": "create_python",
+      "keywords": ["python kodu oluştur", "python yaz", "py dosya", "python script", "python oluştur"],
+      "action": "create_python",
+      "priority": 3
+    },
+    {
+      "id": "create_flask",
+      "keywords": ["flask api", "flask oluştur", "flask yap", "api oluştur", "rest api"],
+      "action": "create_flask",
+      "priority": 3
+    },
+    {
+      "id": "create_css",
+      "keywords": ["css oluştur", "css yap", "stylesheet", "css navbar", "css template"],
+      "action": "create_css",
+      "priority": 3
+    },
+    {
+      "id": "create_portfolio",
+      "keywords": ["portfolio", "portfolyo", "cv sayfası", "kişisel site", "portfolio html"],
+      "action": "create_portfolio",
+      "priority": 3
+    },
+    {
+      "id": "create_discord_bot",
+      "keywords": ["discord bot", "discord oluştur", "bot yap", "discord script"],
+      "action": "create_discord_bot",
+      "priority": 3
+    },
+    {
+      "id": "create_file",
+      "keywords": ["dosya oluştur", "dosya yap", "yeni dosya", "file oluştur"],
+      "action": "create_file",
+      "priority": 4
+    },
+    {
+      "id": "read_file",
+      "keywords": ["dosya oku", "dosya aç", "dosyayı göster", "dosya içeriği", "oku"],
+      "action": "read_file",
+      "priority": 4
+    },
+    {
+      "id": "delete_file",
+      "keywords": ["dosya sil", "sil", "dosyayı kaldır", "delete"],
+      "action": "delete_file",
+      "priority": 4
+    },
+    {
+      "id": "edit_file",
+      "keywords": ["dosya düzenle", "dosyayı değiştir", "edit", "düzenle"],
+      "action": "edit_file",
+      "priority": 4
+    },
+    {
+      "id": "list_files",
+      "keywords": ["dosyaları listele", "dosya listesi", "workspace", "hangi dosyalar var", "listele"],
+      "action": "list_files",
+      "priority": 4
+    },
+    {
+      "id": "terminal",
+      "keywords": ["terminal çalıştır", "komut çalıştır", "terminal", "cmd", "shell", "çalıştır"],
+      "action": "terminal_execute",
+      "priority": 5
+    },
+    {
+      "id": "show_memory",
+      "keywords": ["belleği göster", "hafızayı göster", "ne hatırlıyorsun", "memory göster"],
+      "action": "show_memory",
+      "priority": 6
+    },
+    {
+      "id": "save_memory",
+      "keywords": ["belleği kaydet", "hatırla", "kaydet", "bunu kaydet", "bunu hatırla"],
+      "action": "save_memory",
+      "priority": 6
+    },
+    {
+      "id": "clear_memory",
+      "keywords": ["belleği sil", "hafızayı temizle", "sıfırla", "unutmak", "resetle"],
+      "action": "clear_memory",
+      "priority": 6
+    },
+    {
+      "id": "show_history",
+      "keywords": ["geçmişi göster", "geçmiş", "history", "önceki komutlar", "yaptıklarım"],
+      "action": "show_history",
+      "priority": 6
+    },
+    {
+      "id": "system_info",
+      "keywords": ["sistem bilgisi", "sistem durumu", "hakkında", "about", "version", "versiyon"],
+      "action": "system_info",
+      "priority": 7
+    },
+    {
+      "id": "plugin_list",
+      "keywords": ["pluginler", "eklentiler", "plugin listesi", "modüller"],
+      "action": "list_plugins",
+      "priority": 7
+    }
+  ],
+  "responses": {
+    "greeting": [
+      "Merhaba! Ben {agent_name}, çevrimiçi AI asistanınızım. Size nasıl yardımcı olabilirim?",
+      "Selam! {agent_name} burada. Bugün ne yapmak istersiniz?",
+      "Hoş geldiniz! {agent_name} hizmetinizde. Komutunuzu bekliyorum."
+    ],
+    "farewell": [
+      "Güle güle! Görüşmek üzere.",
+      "Hoşça kalın! Her zaman buradayım.",
+      "Görüşürüz! İyi çalışmalar."
+    ],
+    "unknown": [
+      "Üzgünüm, bu komutu anlayamadım. 'yardım' yazarak komut listesini görebilirsiniz.",
+      "Bu komutu tanımıyorum. Yardım için 'yardım' veya 'help' yazın.",
+      "Hmm, bunu anlayamadım. Lütfen farklı bir şekilde deneyin veya 'yardım' yazın."
+    ],
+    "error": [
+      "Bir hata oluştu: {error}",
+      "İşlem sırasında hata: {error}"
+    ]
+  },
+  "intent_patterns": {
+    "question": ["ne", "nasıl", "neden", "ne zaman", "nerede", "kim", "hangi", "?"],
+    "creation": ["oluştur", "yap", "yaz", "ekle", "kur", "başlat"],
+    "deletion": ["sil", "kaldır", "temizle", "unut"],
+    "read": ["oku", "göster", "aç", "bak", "listele"],
+    "execute": ["çalıştır", "başlat", "run", "execute"],
+    "save": ["kaydet", "sakla", "hatırla"]
+  }
+}

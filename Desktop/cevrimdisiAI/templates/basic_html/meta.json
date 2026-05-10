@@ -1,0 +1,6 @@
+{
+  "name": "basic_html",
+  "description": "Temel HTML5 şablonu - responsive ve modern tasarım",
+  "files": ["index.html"],
+  "placeholders": ["title", "author", "description"]
+}

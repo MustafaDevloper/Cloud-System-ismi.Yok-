@@ -1,0 +1,6 @@
+{
+  "name": "discord_bot",
+  "description": "Discord bot şablonu - komutlar, event'ler, cog sistemi",
+  "files": ["bot.py", "requirements.txt", ".env.example"],
+  "placeholders": ["bot_name"]
+}
