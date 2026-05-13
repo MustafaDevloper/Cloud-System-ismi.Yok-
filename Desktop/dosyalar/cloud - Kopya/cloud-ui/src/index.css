@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #F27D26;
+  --color-surface: #070708;
+  --color-surface-light: #0E0E10;
+  --color-surface-lighter: #18181B;
+  --color-border: #27272A;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-white selection:bg-brand selection:text-black antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.02] backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+  }
+  
+  .glass-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(242, 125, 38, 0.3);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-[#0e0e11];
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/5 rounded-full hover:bg-brand/20 transition-all;
+}
+
+/* Auth Autofill Overrides */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #0e0e11 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

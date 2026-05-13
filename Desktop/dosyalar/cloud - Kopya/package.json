@@ -1,0 +1,30 @@
+{
+  "name": "cloud-sync",
+  "version": "2.0.0",
+  "description": "The Watcher + The Vault — Gerçek zamanlı çift taraflı Cloud Drive sistemi",
+  "type": "module",
+  "scripts": {
+    "server": "node server.js",
+    "client": "node client.js",
+    "dev:server": "node --watch server.js",
+    "dev:client": "node --watch client.js",
+    "dev:ui": "cd cloud-ui && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:ui\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "chokidar": "^3.6.0",
+    "cli-progress": "^3.12.0",
+    "cors": "^2.8.6",
+    "express": "^4.21.2",
+    "form-data": "^4.0.1",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
